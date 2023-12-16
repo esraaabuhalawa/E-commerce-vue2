@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;800;900&display=swap');
+:root {
+  --primary-color: #f2a816;
+  --second-color: #62615f;
+  --roboto: 'Roboto', sans-serif;
+  --second-font: 'Cormorant Garamond', serif;
+  --rubika: 'Rubik', sans-serif;
+  --poppins: 'Poppins', sans-serif;
+}
+*{
+  padding: 0;
+  margin: 0;
+}
+.discount {
+  color: #9ba1a5;
+  text-decoration: line-through;
+  font-family: var(--roboto);
+  font-size: 0.8rem;
+}
+
+.original {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  font-family: var(--roboto);
+  font-weight: lighter;
+}
+
+.quantity {
+  border: 1px solid rgb(175, 180, 180);
+  width: fit-content;
+  font-size: 0.9rem;
+  font-family: var(--roboto);
+  span:first-of-type,
+  span:nth-of-type(3) {
+    border-right: 1px solid #9ba1a1;
+    border-left: 1px solid #9ba1a1;
+    color: #000
+  }
+
+  span:first-of-type:hover,
+  span:nth-of-type(3):hover {
+    cursor: pointer;
+  }
+}
+
+
+.sale {
+  font-size: 0.8rem;
+  font-family: var(--roboto);
+  border-radius: 15px;
+  background: #e44040;
+  background-color: rgba(242, 169, 24,0.8);
+  box-shadow: 1px 1px 2px #a9a8a7;
+
+  .badge {
+    color: #fff;
+    font-weight: normal;
+  }
+}
+
+
+.blackbutton {
+  background: #000;
+  border-radius: 0 !important;
+  font-size: 14px;
+  padding: 10px 0;
+  border: 1px solid #b8bcbe;
+  box-shadow: 1px 1px 6px transparent;
+  overflow: hidden;
+}
+
+
+#signup,
+#signin {
+  background: none;
+  font-size: 0.8rem;
+  border: none;
+  -ms-flex-item-align: self-start;
+      -ms-grid-row-align: self-start;
+      align-self: self-start;
+  color: var(--primary-color);
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  margin-top: 2px;
+  margin-left: 5px;
+}
+
+#signup:hover,
+#signin:hover {
+  cursor: pointer;
+  font-size: 1.05rem;
+}
+
+.close{
+  font-size: 1.2rem;
+  margin: 10px ;
+  color :#f2a816!important;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+@-webkit-keyframes rotation {
+  0%{
+    -webkit-transform:scale(1);
+            transform:scale(1);
+  }
+  50%{
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+@keyframes rotation {
+  0%{
+    -webkit-transform:scale(1);
+            transform:scale(1);
+  }
+  50%{
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+.close:hover svg{
+  cursor: pointer;
+  opacity: 0.5;
+  -webkit-transform:scale(1.09);
+          transform:scale(1.09);
+
+}
+.checkout-alert{
+  font-size: 14px;
+  padding: 5px 10px;
+}
+/******filter button*****/
+.filter{
+  background: none;
+  font-family: var(--roboto);
+  font-size: 1.2rem;
+  margin-right: 20px;
+  font-weight: bold;
+  color: #484845;
+}
+@media (min-width: 768px) {
+  .sale {
+    font-size: 1.03rem;
+    border-radius: 15px;
+  }
+  .blackbutton{
+    font-size: 0.8rem;
+  }
+  #signup,
+  #signin{
+    font-size: 1rem;
+  }
+  .discount{
+    font-size: 0.9rem;
+  }
+  .original{
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .blackbutton{
+    font-size: 0.9rem;
+  }
+  .blackbutton:hover {
+    background: #f2a816;
+    box-shadow: 1px 1px 6px #7e7d7d;
+    border: 1px solid #c3bdbd;
+    -webkit-transform: translateY(2px);
+            transform: translateY(2px);
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+  }
+  .discount{
+    font-size: 0.95rem;
+  }
+  .original{
+    font-size: 1.1rem;
+  }
+}
+input,label{
+  font-family: var(--poppins);
+}

@@ -1,32 +1,37 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+    <nav-item></nav-item>
+
+    <router-view />
+    <footer-item></footer-item>
   </div>
 </template>
+
+<script>
+import FooterItem from "@/components/FooterItem.vue";
+import NavbarItem from "@/components/NavbarItem.vue";
+
+export default {
+  components: {
+    "nav-item": NavbarItem,
+    "footer-item": FooterItem,
+  },
+  beforeMount() {
+    this.$store.commit("initialiseVar");
+  },
+};
+</script>
 
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
 }
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+body {
+  overflow-y: scroll !important;
+  padding-right: 0 !important;
+  margin: 0 !important;
+  font-size: 16px;
 }
 </style>
