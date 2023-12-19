@@ -135,7 +135,7 @@
                       />
                     </div>
                   </div>
-                  <input type="submit" class="mt-4" value="Submit" />
+                  <input type="submit" class="mt-4 blackbutton text-white px-3 border-1 border-black ms-1" value="Submit" />
                 </form>
               </div>
             </div>
