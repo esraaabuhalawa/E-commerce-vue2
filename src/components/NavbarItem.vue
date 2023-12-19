@@ -307,6 +307,7 @@ export default {
 nav {
   position: relative;
   padding: 0 0.5rem;
+  color: #000;
   .nav-link {
     font-size: 0.9rem;
     font-weight: 500;

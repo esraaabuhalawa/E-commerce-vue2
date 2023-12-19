@@ -173,7 +173,7 @@ export default {
     color: var(--primary-color);
     font-weight: normal;
     font-family: var(--roboto);
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .hideAlert {
