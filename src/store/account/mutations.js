@@ -12,9 +12,9 @@ export const isAuth = (state, payload) => {
     state.isAuth = payload
 }
 
-export const authMessage = (state, payload) => {
+/*export const authMessage = (state, payload) => {
     state.authMessage = payload
-}
+}*/
 
 
 export const logOut = (state) => {
