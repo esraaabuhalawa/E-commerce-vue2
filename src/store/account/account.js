@@ -5,14 +5,13 @@ import * as actions from './actions'
 
 
 export default {
-    //namespaced: true,
     state() {
         return {
             userData: {},
             currentUser: null,
             loginError: '',
             isAuth: false,
-            authMessage: ''
+           // authMessage: ''
 
         }
     },
