@@ -117,13 +117,7 @@
                     Apply
                   </button>
                 </div>
-                <div
-                  class="alert alert-danger mt-3 checkout-alert"
-                  role="alert"
-                  v-if="authMessage != ''"
-                >
-                  {{ authMessage }}
-                </div>
+                
                 <router-link
                   tag="button"
                   to="/checkout"
@@ -154,9 +148,7 @@ export default {
     cartTotalPrice() {
       return this.$store.getters.cartTotalPrice;
     },
-    authMessage() {
-      return this.$store.state.account.authMessage;
-    },
+    
   },
   methods: {
     haveCoupon() {
