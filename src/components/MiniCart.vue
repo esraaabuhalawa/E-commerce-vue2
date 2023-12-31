@@ -29,7 +29,7 @@
         <div class="noshopping">
           <router-link
             tag="button"
-            to="/products"
+            to="/products/product-category/shop"
             class="blackbutton text-light"
             >Continue Shopping</router-link
           >
@@ -89,9 +89,7 @@
           >$ {{ cartTotalPrice }}</span
         >
       </div>
-      <div class="alert alert-danger" role="alert" v-if="authMessage != ''">
-        {{ authMessage }}
-      </div>
+      
       <!--Buttons-->
       <router-link
         tag="button"
@@ -114,7 +112,7 @@
 export default {
   data() {
     return {
-      checkUserAuth: false,
+     
     };
   },
   computed: {
@@ -124,9 +122,7 @@ export default {
     cartTotalPrice() {
       return this.$store.getters.cartTotalPrice;
     },
-    authMessage() {
-      return this.$store.state.account.authMessage;
-    },
+
   },
   methods: {
     removeProductFromCart(product) {
