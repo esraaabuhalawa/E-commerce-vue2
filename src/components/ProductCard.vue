@@ -32,7 +32,7 @@
         <span v-if="addItem" ref="appear" :class="{ 'cart-animate': addItem }">
           <i class="fa-solid fa-cart-shopping"></i>
         </span>
-        <div class="spinner-grow" role="status" v-if="loading">
+        <div class="spinner-grow" role="status" v-if="loading" >
           <span class="visually-hidden">Loading...</span>
         </div>
       </div>
@@ -45,6 +45,11 @@
           <i class="fa-solid fa-eye"></i>
         </span>
       </div>
+
+      <div class="cart-added-msg" v-if="loading">
+        <p :class="{'product-animate': loading}"> {{ product.title }} is added to your cart</p>
+      </div>
+      
     </div>
 
     <product-modal :productModal="product"></product-modal>
@@ -55,7 +60,7 @@
 
 <script>
 import ProductModal from "./ProductModal.vue";
-//import { Modal } from 'bootstrap';
+
 export default {
   props: {
     product: Object,
@@ -168,6 +173,10 @@ export default {
     opacity: 1;
   }
 }
+
+.product-animate{
+  animation: appear 0.5s ease-in-out ;
+}
 .cart,
 .perviewe {
   background: #f3e8d3;
@@ -178,8 +187,22 @@ export default {
   padding-top: 4px;
   font-size: 0.72rem;
   right: 5px;
-
-  // transition: all 0.35s ease-out;
+}
+.cart-added-msg{
+    position: absolute;
+    bottom: 30%;
+    background: var(--primary-color);
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    color: #f2f2f2;
+    font-family: var(--poppins);
+    font-weight: 500;
+    p{
+      font-size: 12px;
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
 }
 .cart-animate {
   -webkit-animation: appear 0.35s ease-in-out;
@@ -251,4 +274,5 @@ export default {
     cursor: pointer;
   }
 }
+
 </style>
