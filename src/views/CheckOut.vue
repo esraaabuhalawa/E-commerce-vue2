@@ -407,13 +407,14 @@
                   </div>
                   <!--------------Payment ENd--------------->
                 </div>
-                <button class="blackbutton text-white">
+                <button class="blackbutton text-white" @click="generateOrderNumber">
                   <i class="fa-solid fa-lock"></i>
                   Place Order $ {{ cartTotalPrice }}
                 </button>
               </div>
             </fieldset>
           </form>
+        
         </div>
         <!--# Order Start Of Second Column-->
         <div class="d-none d-lg-block col-lg-5 mt-3" id="order">
@@ -458,7 +459,6 @@ export default {
       zip: "",
       phone: "",
       notes: "",
-
       order: 2000,
     };
   },
@@ -513,6 +513,7 @@ export default {
       const dateString = d.toDateString().split(" ").join(" ");
       return dateString;
     },
+    
   },
   methods: {
     haveCoupon() {
@@ -526,14 +527,18 @@ export default {
       this.inpVal = true;
       this.payWay = "Bank transfer";
     },
-
+    generateOrderNumber() {
+      
+      this.order = Math.floor(Math.random() * 10000);
+      console.log(this.order )
+     
+    },
     orderInfo() {
       this.v$.$validate();
       if (this.v$.$errors.length == 0) {
         this.errormessage = false;
         this.$router.push("/recipt");
         this.$store.dispatch("AddOrder", {
-          // this.$store.commit('setOrder',{
           userEmail: this.orderEmail,
           firstName: this.fName,
           LastName: this.lName,
@@ -545,10 +550,13 @@ export default {
           Zip: this.zip,
           payway: this.payWay,
           date: this.today,
-          orderNumber: this.order + 1,
+          orderNumber: this.order,
           cart: this.cart,
           totalPrice: this.cartTotalPrice,
         });
+
+        this.$store.state.eStore.cart = []
+
       } else {
         window.scrollTo(0, 0);
         this.errormessage = true;
