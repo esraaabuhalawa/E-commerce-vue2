@@ -12,7 +12,7 @@
         >
           <div>
             <span class="d-block">Order number:</span>
-            <span class="d-block">{{ orderDetails.id + 2529 }}</span>
+            <span class="d-block">{{ orderDetails.payload.orderNumber}}</span>
           </div>
           <div>
             <span class="d-block">Date:</span>
