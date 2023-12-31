@@ -22,4 +22,7 @@ img {
   width: auto;
   height: max-content;
 }
+.navbar-brand:hover{
+  cursor: pointer;
+}
 </style>
