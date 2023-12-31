@@ -13,6 +13,7 @@ import Recipt from '../views/Recipt'
 
 import store from '@/store'
 
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -59,13 +60,11 @@ const routes = [
     beforeEnter : (to,from,next)=>{
       store.commit('initialiseVar')
      if(store.state.account.isAuth === true){  
-        store.commit('authMessage','')
         next()
       }else{
-        store.commit('authMessage','Please sign in first')
+        alert('Please sign in first');
         next(false)
       }
-      
     }
   },
   {
