@@ -16,7 +16,7 @@
                                 </div>
 
                                 <label for="staticEmail" class=" col-form-label">Email</label>
-                                <input type="email" class="form-control text-danger" id="staticEmail" value=""
+                                <input type="email" class="form-control" id="staticEmail" value=""
                                     @keyup="varifyEmail" v-model.trim="currentemail" required>
                                 <span class="errorMessage" v-show="emailVarified">Please Enter a correct Email</span>
                                 <span class="errorMessage" v-show="emptyEmail">This field is required</span>
